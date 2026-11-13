@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahan Ajar PLSV & PtLSV | Sulistyana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .tab-active {
+            border-bottom: 4px solid #3b82f6;
+            color: #1d4ed8;
+            font-weight: 700;
+        }
+        .tab-inactive {
+            color: #64748b;
+            font-weight: 600;
+        }
+        .tab-inactive:hover {
+            color: #3b82f6;
+            background-color: #eff6ff;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg relative overflow-hidden">
+        <!-- Decorative shapes -->
+        <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-white opacity-10"></div>
+        <div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-24 h-24 rounded-full bg-white opacity-10"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 py-8 md:py-12 relative z-10 text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">Belajar Matematika Seru</h1>
+                <p class="text-blue-100 text-lg md:text-xl font-medium">Persamaan & Pertidaksamaan Linier Satu Variabel</p>
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-4 flex items-center gap-4 shadow-xl">
+                <div class="bg-white text-indigo-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl shadow-inner">
+                    S
+                </div>
+                <div class="text-left">
+                    <p class="text-xs text-blue-100 uppercase tracking-wider font-semibold">Guru Pengampu</p>
+                    <p class="font-bold text-lg">Sulistyana</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-white shadow-sm sticky top-0 z-20">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between md:justify-start">
+            <button onclick="switchTab('materi')" id="btn-materi" class="tab-btn tab-active flex-1 md:flex-none px-2 md:px-6 py-4 text-sm md:text-base text-center transition-colors">
+                📚 Materi
+            </button>
+            <button onclick="switchTab('contoh')" id="btn-contoh" class="tab-btn tab-inactive flex-1 md:flex-none px-2 md:px-6 py-4 text-sm md:text-base text-center transition-colors">
+                💡 Contoh Soal
+            </button>
+            <button onclick="switchTab('latihan')" id="btn-latihan" class="tab-btn tab-inactive flex-1 md:flex-none px-2 md:px-6 py-4 text-sm md:text-base text-center transition-colors">
+                ✍️ Latihan Soal
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-4xl mx-auto w-full p-4 py-8">
+
+        <!-- TAB 1: MATERI -->
+        <section id="materi" class="tab-content animate-fade-in block">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 mb-6">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center gap-2">
+                    <span class="bg-indigo-100 p-2 rounded-lg text-indigo-600">1</span>
+                    Persamaan Linier Satu Variabel (PLSV)
+                </h2>
+                
+                <p class="mb-4 text-slate-600 leading-relaxed">
+                    <strong>Persamaan Linier Satu Variabel (PLSV)</strong> adalah kalimat terbuka yang dihubungkan oleh tanda sama dengan (<code class="bg-slate-100 px-1 rounded text-pink-600 font-bold">=</code>) dan hanya mempunyai satu variabel berpangkat satu.
+                </p>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
+                    <p class="font-semibold text-blue-800 mb-1">Bentuk Umum:</p>
+                    <p class="text-xl font-bold text-blue-900 font-mono">ax + b = c</p>
+                    <p class="text-sm text-blue-700 mt-2">Keterangan: <br> <strong>x</strong> = variabel (peubah) <br> <strong>a</strong> = koefisien (a &ne; 0) <br> <strong>b, c</strong> = konstanta</p>
+                </div>
+
+                <h3 class="font-bold text-lg mb-2 text-slate-800">Sifat-sifat PLSV:</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-600 mb-8">
+                    <li>Nilai persamaan tidak berubah jika kedua ruas <strong>ditambah</strong> atau <strong>dikurangi</strong> dengan bilangan yang sama.</li>
+                    <li>Nilai persamaan tidak berubah jika kedua ruas <strong>dikali</strong> atau <strong>dibagi</strong> dengan bilangan tak nol yang sama.</li>
+                </ul>
+
+                <hr class="my-8 border-slate-200">
+
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 flex items-center gap-2">
+                    <span class="bg-emerald-100 p-2 rounded-lg text-emerald-600">2</span>
+                    Pertidaksamaan Linier Satu Variabel (PtLSV)
+                </h2>
+                
+                <p class="mb-4 text-slate-600 leading-relaxed">
+                    <strong>Pertidaksamaan Linier Satu Variabel (PtLSV)</strong> adalah kalimat terbuka yang memiliki satu variabel berpangkat satu dan dihubungkan oleh tanda ketidaksamaan.
+                </p>
+                
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <span class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg font-mono font-bold border border-emerald-200">&lt; (kurang dari)</span>
+                    <span class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg font-mono font-bold border border-emerald-200">&gt; (lebih dari)</span>
+                    <span class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg font-mono font-bold border border-emerald-200">&le; (kurang dari sama dengan)</span>
+                    <span class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg font-mono font-bold border border-emerald-200">&ge; (lebih dari sama dengan)</span>
+                </div>
+
+                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg mb-6">
+                    <p class="font-bold text-red-800 mb-2 flex items-center gap-2">
+                        <span>⚠️</span> ATURAN PENTING PtLSV!
+                    </p>
+                    <p class="text-red-700">
+                        Tanda ketidaksamaan <strong>HARUS BERBALIK ARAH</strong> (misal &lt; menjadi &gt;) jika kedua ruas <strong>dikali atau dibagi dengan bilangan negatif yang sama</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: CONTOH SOAL -->
+        <section id="contoh" class="tab-content hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Contoh 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+                    <div class="bg-blue-600 text-white px-4 py-2 font-bold flex justify-between">
+                        <span>Contoh Soal 1 (PLSV)</span>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <p class="font-semibold text-slate-800 mb-4">Tentukan penyelesaian dari persamaan: <br> <span class="text-xl font-mono text-blue-600 block mt-2">2x - 5 = 11</span></p>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                            <p class="font-bold text-slate-700 mb-2 border-b pb-2">Pembahasan:</p>
+                            <table class="w-full text-sm text-slate-600 font-mono">
+                                <tr><td class="py-1 w-1/2">2x - 5</td><td class="py-1 w-4 text-center">=</td><td class="py-1">11</td></tr>
+                                <tr class="text-xs text-slate-400"><td>(kedua ruas ditambah 5)</td><td></td><td></td></tr>
+                                <tr><td class="py-1">2x</td><td class="py-1 text-center">=</td><td class="py-1">11 + 5</td></tr>
+                                <tr><td class="py-1">2x</td><td class="py-1 text-center">=</td><td class="py-1">16</td></tr>
+                                <tr class="text-xs text-slate-400"><td>(kedua ruas dibagi 2)</td><td></td><td></td></tr>
+                                <tr><td class="py-1">x</td><td class="py-1 text-center">=</td><td class="py-1">16 / 2</td></tr>
+                                <tr class="font-bold text-blue-600 text-base"><td class="py-2">x</td><td class="py-2 text-center">=</td><td class="py-2">8</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 2 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+                    <div class="bg-indigo-600 text-white px-4 py-2 font-bold flex justify-between">
+                        <span>Contoh Soal 2 (PLSV)</span>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <p class="font-semibold text-slate-800 mb-4">Selesaikan persamaan berikut: <br> <span class="text-xl font-mono text-indigo-600 block mt-2">3(x + 2) = 2x + 10</span></p>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                            <p class="font-bold text-slate-700 mb-2 border-b pb-2">Pembahasan:</p>
+                            <table class="w-full text-sm text-slate-600 font-mono">
+                                <tr><td class="py-1 w-1/2">3(x + 2)</td><td class="py-1 w-4 text-center">=</td><td class="py-1">2x + 10</td></tr>
+                                <tr class="text-xs text-slate-400"><td>(kalikan masuk)</td><td></td><td></td></tr>
+                                <tr><td class="py-1">3x + 6</td><td class="py-1 text-center">=</td><td class="py-1">2x + 10</td></tr>
+                                <tr class="text-xs text-slate-400"><td>(kumpulkan x di kiri)</td><td></td><td></td></tr>
+                                <tr><td class="py-1">3x - 2x</td><td class="py-1 text-center">=</td><td class="py-1">10 - 6</td></tr>
+                                <tr class="font-bold text-indigo-600 text-base"><td class="py-2">x</td><td class="py-2 text-center">=</td><td class="py-2">4</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+                    <div class="bg-emerald-600 text-white px-4 py-2 font-bold flex justify-between">
+                        <span>Contoh Soal 3 (PtLSV)</span>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <p class="font-semibold text-slate-800 mb-4">Tentukan himpunan penyelesaian: <br> <span class="text-xl font-mono text-emerald-600 block mt-2">4y - 3 &le; 9</span></p>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                            <p class="font-bold text-slate-700 mb-2 border-b pb-2">Pembahasan:</p>
+                            <table class="w-full text-sm text-slate-600 font-mono">
+                                <tr><td class="py-1 w-1/2">4y - 3</td><td class="py-1 w-4 text-center">&le;</td><td class="py-1">9</td></tr>
+                                <tr><td class="py-1">4y</td><td class="py-1 text-center">&le;</td><td class="py-1">9 + 3</td></tr>
+                                <tr><td class="py-1">4y</td><td class="py-1 text-center">&le;</td><td class="py-1">12</td></tr>
+                                <tr><td class="py-1">y</td><td class="py-1 text-center">&le;</td><td class="py-1">12 / 4</td></tr>
+                                <tr class="font-bold text-emerald-600 text-base"><td class="py-2">y</td><td class="py-2 text-center">&le;</td><td class="py-2">3</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 4 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+                    <div class="bg-red-500 text-white px-4 py-2 font-bold flex justify-between">
+                        <span>Contoh Soal 4 (PtLSV Khusus)</span>
+                    </div>
+                    <div class="p-5 flex-grow">
+                        <p class="font-semibold text-slate-800 mb-4">Selesaikan pertidaksamaan berikut: <br> <span class="text-xl font-mono text-red-500 block mt-2">-2x + 4 &lt; 10</span></p>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                            <p class="font-bold text-slate-700 mb-2 border-b pb-2">Pembahasan:</p>
+                            <table class="w-full text-sm text-slate-600 font-mono">
+                                <tr><td class="py-1 w-1/2">-2x + 4</td><td class="py-1 w-4 text-center">&lt;</td><td class="py-1">10</td></tr>
+                                <tr><td class="py-1">-2x</td><td class="py-1 text-center">&lt;</td><td class="py-1">10 - 4</td></tr>
+                                <tr><td class="py-1">-2x</td><td class="py-1 text-center">&lt;</td><td class="py-1">6</td></tr>
+                                <tr class="text-xs text-red-500 font-bold"><td colspan="3">(dibagi -2, tanda DIBALIK!)</td></tr>
+                                <tr><td class="py-1">x</td><td class="py-1 text-center">&gt;</td><td class="py-1">6 / -2</td></tr>
+                                <tr class="font-bold text-red-600 text-base"><td class="py-2">x</td><td class="py-2 text-center">&gt;</td><td class="py-2">-3</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: LATIHAN SOAL -->
+        <section id="latihan" class="tab-content hidden">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Uji Kemampuanmu!</h2>
+                    <p class="text-slate-500">Kerjakan 10 soal di bawah ini. Pilih jawaban yang paling tepat, lalu klik "Cek Hasil" di bagian bawah untuk melihat nilaimu.</p>
+                </div>
+
+                <!-- Result Box (Hidden by default) -->
+                <div id="result-box" class="hidden mb-8 p-6 rounded-xl text-center shadow-inner transition-all transform scale-95 duration-300">
+                    <h3 class="text-xl font-bold mb-2" id="result-title">Hasil Latihan</h3>
+                    <div class="text-5xl font-black mb-2" id="result-score">100</div>
+                    <p class="font-medium text-lg" id="result-message">Luar Biasa!</p>
+                    <button onclick="resetQuiz()" class="mt-4 px-6 py-2 bg-slate-800 text-white rounded-full font-bold hover:bg-slate-700 transition-colors">Coba Lagi</button>
+                </div>
+
+                <!-- Quiz Form -->
+                <form id="quiz-form" onsubmit="return false;" class="space-y-6">
+                    <div id="quiz-container" class="space-y-8">
+                        <!-- Questions will be injected here via JavaScript -->
+                    </div>
+                    
+                    <div class="pt-8 border-t border-slate-200 flex justify-center">
+                        <button type="button" onclick="submitQuiz()" id="submit-btn" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                            Cek Hasil Latihan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-6 text-center mt-auto">
+        <p>&copy; 2026 Bahan Ajar Matematika interaktif. <br class="md:hidden">Dibuat khusus untuk kelas Ibu/Bapak Sulistyana.</p>
+    </footer>
+
+    <!-- Logic Script -->
+    <script>
+        // --- Navigation Logic ---
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Show selected content
+            document.getElementById(tabId).classList.remove('hidden');
+
+            // Reset tab styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('tab-inactive');
+            });
+            // Set active style
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            activeBtn.classList.remove('tab-inactive');
+            activeBtn.classList.add('tab-active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Quiz Logic ---
+        const quizData = [
+            {
+                q: "Nilai x yang memenuhi persamaan x + 7 = 15 adalah...",
+                options: ["x = 7", "x = 8", "x = 9", "x = 22"],
+                answer: 1 // index 1 (8)
+            },
+            {
+                q: "Himpunan penyelesaian dari 3a - 4 = 11 adalah...",
+                options: ["a = 5", "a = -5", "a = 15", "a = 3"],
+                answer: 0 
+            },
+            {
+                q: "Penyelesaian dari pertidaksamaan 2x + 4 &lt; 12 adalah...",
+                options: ["x &lt; 4", "x &gt; 4", "x &lt; 8", "x &gt; 8"],
+                answer: 0
+            },
+            {
+                q: "Nilai y yang memenuhi 5y - 2 = 3y + 10 adalah...",
+                options: ["y = 4", "y = 6", "y = 8", "y = 12"],
+                answer: 1 // 2y = 12 => y = 6
+            },
+            {
+                q: "Jika 2(p - 3) = 14, maka nilai p adalah...",
+                options: ["p = 10", "p = 7", "p = 4", "p = 20"],
+                answer: 0 // 2p - 6 = 14 => 2p = 20 => p=10
+            },
+            {
+                q: "Himpunan penyelesaian dari 4x - 5 &ge; 2x + 7 adalah...",
+                options: ["x &ge; 1", "x &ge; 2", "x &ge; 6", "x &le; 6"],
+                answer: 2 // 2x >= 12 => x >= 6
+            },
+            {
+                q: "Penyelesaian dari -3x &lt; 15 adalah...",
+                options: ["x &lt; -5", "x &gt; -5", "x &lt; 5", "x &gt; 5"],
+                answer: 1 // dibagi -3 tanda balik => x > -5
+            },
+            {
+                q: "Jika &frac12;x + 3 = 7, maka nilai x adalah...",
+                options: ["x = 2", "x = 4", "x = 8", "x = 10"],
+                answer: 2 // 1/2x = 4 => x = 8
+            },
+            {
+                q: "Himpunan penyelesaian dari 5 - 2x &ge; 11 adalah...",
+                options: ["x &le; -3", "x &ge; -3", "x &le; 3", "x &ge; 3"],
+                answer: 0 // -2x >= 6 => x <= -3
+            },
+            {
+                q: "Umur Andi 5 tahun lebih tua dari Budi. Jika jumlah umur mereka 25 tahun, maka umur Budi adalah...",
+                options: ["10 tahun", "15 tahun", "20 tahun", "5 tahun"],
+                answer: 0 // B = x, A = x+5 => 2x+5 = 25 => 2x = 20 => x = 10
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+        let isSubmitted = false;
+
+        function renderQuiz() {
+            quizContainer.innerHTML = '';
+            quizData.forEach((item, index) => {
+                // Create question block
+                const qBlock = document.createElement('div');
+                qBlock.className = 'bg-slate-50 p-5 rounded-xl border border-slate-200 transition-colors duration-300';
+                qBlock.id = `q-block-${index}`;
+
+                // Question text
+                const qText = document.createElement('p');
+                qText.className = 'font-bold text-slate-800 mb-4 text-lg';
+                qText.innerHTML = `<span class="bg-blue-100 text-blue-800 w-8 h-8 inline-flex items-center justify-center rounded-full mr-2 text-sm">${index + 1}</span> ${item.q}`;
+                qBlock.appendChild(qText);
+
+                // Options container
+                const optionsGrid = document.createElement('div');
+                optionsGrid.className = 'grid grid-cols-1 md:grid-cols-2 gap-3 pl-10';
+
+                item.options.forEach((opt, optIndex) => {
+                    const optLabel = document.createElement('label');
+                    optLabel.className = 'flex items-center p-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-blue-50 hover:border-blue-300 transition-colors group relative overflow-hidden';
+                    optLabel.id = `label-q${index}-o${optIndex}`;
+                    
+                    const optInput = document.createElement('input');
+                    optInput.type = 'radio';
+                    optInput.name = `q${index}`;
+                    optInput.value = optIndex;
+                    optInput.className = 'w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 mr-3 z-10';
+                    optInput.disabled = isSubmitted;
+
+                    const optText = document.createElement('span');
+                    optText.className = 'text-slate-700 font-medium z-10';
+                    optText.innerHTML = opt;
+
+                    // Option Letter (A, B, C, D)
+                    const letters = ['A', 'B', 'C', 'D'];
+                    const letterBadge = document.createElement('span');
+                    letterBadge.className = 'bg-slate-200 text-slate-600 text-xs font-bold w-6 h-6 rounded flex items-center justify-center mr-3 group-hover:bg-blue-200 group-hover:text-blue-700 z-10';
+                    letterBadge.innerText = letters[optIndex];
+
+                    // Correct/Wrong Icon Placeholder
+                    const iconSpan = document.createElement('span');
+                    iconSpan.className = 'ml-auto text-xl z-10';
+                    iconSpan.id = `icon-q${index}-o${optIndex}`;
+
+                    optLabel.appendChild(optInput);
+                    optLabel.appendChild(letterBadge);
+                    optLabel.appendChild(optText);
+                    optLabel.appendChild(iconSpan);
+                    
+                    optionsGrid.appendChild(optLabel);
+                });
+
+                qBlock.appendChild(optionsGrid);
+
+                // Explanation container (hidden initially)
+                const explBlock = document.createElement('div');
+                explBlock.id = `expl-${index}`;
+                explBlock.className = 'hidden mt-4 pl-10 text-sm font-medium';
+                qBlock.appendChild(explBlock);
+
+                quizContainer.appendChild(qBlock);
+            });
+        }
+
+        function submitQuiz() {
+            if (isSubmitted) return;
+
+            let score = 0;
+            let answeredCount = 0;
+
+            // First pass to check if all answered
+            for (let i = 0; i < quizData.length; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) answeredCount++;
+            }
+
+            // Custom non-alert modal/message logic
+            if (answeredCount < quizData.length) {
+                const msgBox = document.createElement('div');
+                msgBox.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold z-50 animate-bounce';
+                msgBox.innerText = `Harap jawab semua soal! (Baru terjawab ${answeredCount} dari 10)`;
+                document.body.appendChild(msgBox);
+                setTimeout(() => { msgBox.remove(); }, 3000);
+                return;
+            }
+
+            isSubmitted = true;
+            document.getElementById('submit-btn').classList.add('hidden');
+
+            // Evaluate answers
+            quizData.forEach((item, index) => {
+                const selectedInput = document.querySelector(`input[name="q${index}"]:checked`);
+                const selectedValue = parseInt(selectedInput.value);
+                
+                // Disable all inputs in this question
+                document.querySelectorAll(`input[name="q${index}"]`).forEach(input => input.disabled = true);
+
+                const block = document.getElementById(`q-block-${index}`);
+                const expl = document.getElementById(`expl-${index}`);
+
+                if (selectedValue === item.answer) {
+                    score++;
+                    // Mark correct option
+                    const correctLabel = document.getElementById(`label-q${index}-o${item.answer}`);
+                    correctLabel.classList.add('bg-green-100', 'border-green-500');
+                    correctLabel.classList.remove('hover:bg-blue-50');
+                    document.getElementById(`icon-q${index}-o${item.answer}`).innerHTML = '✅';
+                    
+                    block.classList.add('border-green-300', 'bg-green-50/30');
+                } else {
+                    // Mark selected (wrong) option
+                    const wrongLabel = document.getElementById(`label-q${index}-o${selectedValue}`);
+                    wrongLabel.classList.add('bg-red-100', 'border-red-500');
+                    wrongLabel.classList.remove('hover:bg-blue-50');
+                    document.getElementById(`icon-q${index}-o${selectedValue}`).innerHTML = '❌';
+
+                    // Highlight correct option
+                    const correctLabel = document.getElementById(`label-q${index}-o${item.answer}`);
+                    correctLabel.classList.add('border-green-500', 'bg-green-50');
+                    document.getElementById(`icon-q${index}-o${item.answer}`).innerHTML = '✅';
+
+                    block.classList.add('border-red-300', 'bg-red-50/30');
+                    
+                    // Show short explanation
+                    expl.classList.remove('hidden');
+                    expl.classList.add('text-red-600');
+                    expl.innerHTML = `Jawaban yang benar adalah: <strong>${item.options[item.answer]}</strong>`;
+                }
+            });
+
+            // Show result box
+            const resultBox = document.getElementById('result-box');
+            const resultScore = document.getElementById('result-score');
+            const resultTitle = document.getElementById('result-title');
+            const resultMessage = document.getElementById('result-message');
+            
+            const finalScore = (score / quizData.length) * 100;
+            resultScore.innerText = finalScore;
+
+            resultBox.classList.remove('hidden');
+            
+            // Set styles based on score
+            if (finalScore >= 80) {
+                resultBox.classList.add('bg-green-100', 'text-green-800', 'border', 'border-green-300');
+                resultMessage.innerText = "Luar Biasa! Pemahamanmu sangat baik.";
+            } else if (finalScore >= 60) {
+                resultBox.classList.add('bg-yellow-100', 'text-yellow-800', 'border', 'border-yellow-300');
+                resultMessage.innerText = "Bagus! Terus tingkatkan belajarmu ya.";
+            } else {
+                resultBox.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
+                resultMessage.innerText = "Jangan menyerah! Coba baca lagi materinya dan ulangi.";
+            }
+
+            // Scroll to result
+            setTimeout(() => {
+                resultBox.classList.remove('scale-95');
+                resultBox.classList.add('scale-100');
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function resetQuiz() {
+            isSubmitted = false;
+            
+            // Reset result box classes
+            const resultBox = document.getElementById('result-box');
+            resultBox.classList.add('hidden', 'scale-95');
+            resultBox.className = 'hidden mb-8 p-6 rounded-xl text-center shadow-inner transition-all transform scale-95 duration-300';
+            
+            document.getElementById('submit-btn').classList.remove('hidden');
+            
+            renderQuiz();
+            window.scrollTo({ top: document.getElementById('latihan').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        // Initialize quiz on load
+        window.onload = () => {
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
